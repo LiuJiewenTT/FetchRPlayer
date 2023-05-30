@@ -7,7 +7,7 @@
 2. Typically when **playing Minecraft**, the *HostPort* is for remote player who has IPv6 available and the *LocalPort* is the game's LAN Port for LAN Players. In this case, port `25565` is often used as the LAN port, thus is *LocalPort* as well.
 3. You may use SSH Local Port Forwarding and set *HostPort* to 22 to **test** if you're ready to connect to the target device(remote player's PC). The command is prepared in the script.
 4. You might need to rerun the scripts if the network flops broke the connection.
-5. This technique can hide the server's IP from players literally, but it cannot hide from advanced users by using some methods and commands. So don't lay too much expectation on the "Hidden IP" feature. *But it's a good idea to forwarding random ports to players* by simply modify the scripts. That's to say, every remote player can be given a random port differently. By doing so, your security will be improved in some sense.
+5. This technique can hide the server's IP from players literally, but it cannot hide from advanced users by using some methods and commands. So don't lay too much expectation on the "Hidden IP" feature. *But it's a good idea to forwarding random ports to players* by simply modify the scripts. That's to say, every remote player can be given a port differently and randomly. By doing so, your security will be improved in some sense.
 
 ## Using
 
