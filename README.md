@@ -1,5 +1,5 @@
 # FetchRPlayer
-<strong style="color:red">Fetch Remote Player</strong>s' *port*s to let them join "my" game. This is using SSH Port  Forwarding. It's like **joining with IPv6** but **not exposing server IP**(not completely hidden).
+<strong style="color:red">Fetch Remote Player</strong>s' *port*s to let them join "my" game. This is using SSH Port  Forwarding. It's like **joining with IPv6** but **not exposing server IP**(not completely hidden). It's abbreviation is just the "FRP" and it's ok to regard it to be a basic and simple FRP alternative for really trusted friends.
 
 ## Notes
 
