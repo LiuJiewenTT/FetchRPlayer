@@ -1,5 +1,5 @@
 # FetchRPlayer
-<strong style="color:red">Fetch Remote Player</strong>s' *port*s to let them join "my" game. This is using SSH Port  Forwarding. It's like **joining with IPv6** but **not exposing server IP**(not completely hidden). It's abbreviation is just the "FRP" and it's ok to regard it to be a basic and simple FRP alternative for really trusted friends.
+<strong style="color:red">Fetch Remote Player</strong>s' *port*s to let them join "my" game. This is using SSH Port Forwarding. It's like **joining with IPv6** but **not exposing server IP**(not completely hidden). It's abbreviation is just the "FRP" and it's ok to regard it as a simple basic FRP alternative for really trusted friends.
 
 ## Notes
 
@@ -11,7 +11,8 @@
 
 ## Using
 
-The following "Server side" and "Client side" only refer to the game but not this program.
+- The following "Server side" and "Client side" only refer to the game but not this program.
+- The programs are **only required on servers**. Remote players don't need to do anything except setting the server address to connect to in their applications, for example, games.
 
 ### Server side
 
@@ -19,7 +20,7 @@ Consider `example/example.bat` as a template, copy that file to the same folder 
 
 Then, you should edit the `host` variable. In most cases, the remote player has no IPv4 public address but IPv6 instead. If that is IPv6, quote it within `[]`.
 
-Currently the `run.bat` is not enabled. It lacks of the sentence, under line 14, to start: `@start %%~fi`. It's not a problem cause `run.bat` is prepared for multi-players(remote).
+Currently the `run.bat` is not enabled. It lacks of the sentence, under line 14, to start: `@start "%%~fi"`. It's not a problem cause `run.bat` is prepared for multi-players(remote).
 
 **To run the program, there are two ways for now**:
 
@@ -28,6 +29,6 @@ Currently the `run.bat` is not enabled. It lacks of the sentence, under line 14,
 
 ### Client side
 
-Add a server address: `[::1]:25566` for example. The format is: `%HostLocal%:%HostPort%`.
+Add a server address: `[::1]:25566`, for example. The format is: `%HostLocal%:%HostPort%`.
 
 Enjoy! :smiley:

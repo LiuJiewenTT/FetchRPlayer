@@ -1,7 +1,7 @@
 @echo off
 
 @REM 程序正文
-setlocal
+@setlocal
 
     @REM 设置代码页为UTF-8
     @for /F "tokens=2 delims=:" %%i in ('chcp') do ( set /A codepage=%%i )
@@ -17,7 +17,7 @@ setlocal
         ) 
     )
 
-EXIT /B 0
+@EXIT /B 0
 @REM 程序正文截止处
 
 
