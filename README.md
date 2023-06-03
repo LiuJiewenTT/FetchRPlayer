@@ -3,7 +3,7 @@
 
 > If there's anything I said is wrong, please tell me and I will try to correct it.
 
-> For better reading experience, especially from mobile devices, please go to the html version of this [link(online)](https://liujiewentt.github.io/FetchRPlayer/docs_html/FetchRPlayer.README_en-us.html) ([offline]()).
+> For better reading experience, especially from mobile devices, please go to the html version of this [link(online)](https://liujiewentt.github.io/FetchRPlayer/docs_html/FetchRPlayer.README_en-us.html) ([download for offline](https://github.com/LiuJiewenTT/FetchRPlayer/archive/refs/heads/docs_only.zip)).
 
 ## OS Supported
 
@@ -28,7 +28,7 @@
 7. Unless you use Local Port Forwarding, as is the **MSS:A** mentioned below, who can join is determined by you. **You start/enable whose script in local, then who will be able to join.** In facts, in the case of MSS:A, you can determine as well, but that is in another method to control.
 8. To protect your game from being joined without management/authentication and comes and goes freely, don't open the game port in firewall. That's to say, the port for direct LAN game should never be exposed to public.
 9. **If you**, the one who open a server, **have no IPv6 address**, you should consider reconfiguring your network, including adjusting routers' settings, asking ISP for help and using IPv6 over IPv4 technologies. There are lots of methods, the most outstanding one is "Teredo". For more information, you need to search by yourself.
-10. <strong style="background:black; color:blue">If you're encountering <span style="color:red">DDoS attacks</span>, read the 5th above.</strong> 
+10. <strong style="background:lightgray; color:blue">If you're encountering <span style="color:red">DDoS attacks</span>, read the 5th above.</strong> 
     1. **Player Management(Cleaning): You should make the system to change to a new IPv6 address instead of going down/offline. And you should protect your ports. To find out the spy, I advise you to apply "binary search" by dividing players to different groups and giving different ports on a newly configured IPv6 address. If all ports are scanned and attacked, don't give IPv6 address to more than one group in the same period/stage. Besides, this has inspired me an idea about "distributed": "Distributed Mid-Server Strategy"(DMSS, mentioned in the followings).** 
     2. Connection Optimization Option: Most people in China should have the IPv6 access from home networks and mobile hotspots, if not, consider "Teredo" servers as mentioned in the 6th point. I know that it's not easy to maintain a IPv4 server, but you may **try sharing your teredo server with someone like you and form a small group: you join together. If the owner got attacked and had have to spend lots of money on protection, it's time to call police.** In this strategy, a teredo server is always optional and can be given up and most players should not be affected at all. 
        (This is about traditional IPv4-based attacks. But not all attacks based on IPs and there are attacks regarding IPv6. So this is kind of redundancy. As time goes, this would have smaller and smaller effects as there will be more and more IPv6 attacks.)
