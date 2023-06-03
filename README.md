@@ -3,6 +3,8 @@
 
 > If there's anything I said is wrong, please tell me and I will try to correct it.
 
+> For better reading experience, especially from mobile devices, please go to the html version of this [link(online)](liujiewentt.github.io/FetchRPlayer/docs_html/FetchRPlayer.README_en-us.html) ([offline](docs_html/FetchRPlayer.README_en-us.html)).
+
 ## OS Supported
 
 - [x] Windows (Current Branch)
