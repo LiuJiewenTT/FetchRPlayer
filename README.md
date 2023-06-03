@@ -3,7 +3,7 @@
 
 > If there's anything I said is wrong, please tell me and I will try to correct it.
 
-> For better reading experience, especially from mobile devices, please go to the html version of this [link(online)](liujiewentt.github.io/FetchRPlayer/docs_html/FetchRPlayer.README_en-us.html) ([offline](docs_html/FetchRPlayer.README_en-us.html)).
+> For better reading experience, especially from mobile devices, please go to the html version of this [link(online)](https://liujiewentt.github.io/FetchRPlayer/docs_html/FetchRPlayer.README_en-us.html) ([offline]()).
 
 ## OS Supported
 
@@ -34,7 +34,7 @@
        (This is about traditional IPv4-based attacks. But not all attacks based on IPs and there are attacks regarding IPv6. So this is kind of redundancy. As time goes, this would have smaller and smaller effects as there will be more and more IPv6 attacks.)
     3. Most OS does not enable the feature of temporary IPv6 address, so it will work for a long time that banning a IPv6 address. But don't lay too much expectation on this point. 
     4. **About firewall**: if you can, void external network accessing common ports, including <del>`<del>`</del>22,<del>`</del>`</del> 23, 80, 443, etc., and only local devices are allowed. You may leave some other port for ssh. Change or close some ports can usually decrease the affect of some types of DDoS attacks. But it's the best that you have some firewall directed against DDoS.
-    5. **Distributed Mid-Server Strategy (DMSS)**: You should apply **MSS:A** or **MSS:S** (mentioned below). Never tell all players all the ports but tell by group. This is a management preference and is good for keep a spy-less network. If one mid-server is being attacked and cannot work properly, the players using other mid-servers would not be affected.
+    5. **Distributed Mid-Server Strategy (DMSS)**: You should apply **MSS:A** or **MSS:S** (mentioned below). Never tell all players all the ports but tell by group. This is a management preference and is good for keep a spy-less network. If one mid-server is being attacked and cannot work properly, the players using other mid-servers would not be affected. And this, when you choose MSS:A, is somewhat a feeling of using SakuraFrp, although they're different.
 11. Using this product means *remote players should have OpenSSH Server installed in the computer and giving your Pubkey(public key) to the remote players*. (Unless you use the advanced solution mentioned in the followings)
     To obtain their trust, you may do these:
     1. Publish your codes to run. You can refer to here if you did not change anything on them. 
