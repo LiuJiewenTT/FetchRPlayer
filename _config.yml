@@ -3,7 +3,7 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 - jekyll-redirect-from
 
-baseurl: /MyDoc_A
+baseurl: /FetchRPlayer
 # url: https://liujiewentt.github.io
 permalink: none
 collections:
@@ -15,7 +15,7 @@ defaults:
   -
     values:
       # author: "刘杰文"
-      # title: "MyDoc_A Library"
+      # title: "FetchRPlayer | Document"
       layout: leap_day_customized_v5.1
       # allow_download_doc: true
 
