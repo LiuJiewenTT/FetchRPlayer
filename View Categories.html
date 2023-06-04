@@ -1,6 +1,6 @@
 ---
 title: View Categories and Tags
-tags: __supports__
+tag: __supports__
 ---
 <!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
@@ -12,12 +12,13 @@ tags: __supports__
 <body>
     
     <h1>View Categories</h1>
+    <!-- //这里使用了 jekyll 语法，会被编译，所以加多个"\" -->
+    {%- assign categories = site.pages | map: 'categories' | uniq | compact -%}
+    {%- assign category_s = site.pages | map: 'category' | uniq | compact -%}
+    {%- assign categoties = categories | append: category_s | uniq | compact -%}
     {% if site.categories %}
         <ul>
-            <!-- //这里使用了 jekyll 语法，会被编译，所以加多个"\" -->
-            {%- assign categories = site.pages | map: 'categories' | uniq | compact -%}
-	    {%- assign category_s = site.pages | map: 'category' | uniq | compact -%}
-	    {%- assign categoties = categories | append: category_s | uniq | compact -%}
+            
             {%- for category in categories -%}
                 <li>
                     <!-- <a href="/categories/{{ category | first }}/" title="view all posts">{{ category | first }} {{ category | last | size }}</a> -->
