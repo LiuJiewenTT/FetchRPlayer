@@ -1,0 +1,29 @@
+---
+title: Page Map
+---
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ </head>
+  <body>
+    <div>
+        {%- for page in site.pages -%}
+        <ul>
+          {%- if page.title -%}
+          <!-- Now irrelavant files without title would not be list out. -->
+          <li>
+            <!-- <a href="{{site.github.url | url_decode}}{{page.url | url_decode}}">{{ page.title | default: "Untitled Link" }} ({{ page.dir | default:"root" | url_decode }})</a> -->
+            <!-- <a href="{{site.github.url | url_decode}}{{page.url}}">{{ page.title | default: "Untitled Link" }} ({{ page.dir | default:"root" }})</a> -->
+            <a href="{{site.github.url | url_decode}}{{page.url | url_escape}}">{{ page.title | default: "Untitled Link" }} ({{ page.dir | default:"root" | replace: "+", "%2B" | url_decode }})</a>
+            <!-- 明明url_escape可以解析中文，偏偏只有链接里解析了，文字里没解析，就很奇怪。-->
+            <!-- url_decode filter is supported from Liquid 4.0, so, WHAT? Github Pages use 4.0.3!-->
+          </li>
+          {%- endif -%}
+        </ul>
+        {%- endfor -%}
+      
+    </div>
+  </body>
+</html>

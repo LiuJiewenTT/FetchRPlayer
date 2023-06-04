@@ -1,0 +1,69 @@
+---
+title: View Categories and Tags
+tags: __supports__
+---
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ </head>
+
+<body>
+    
+    <h1>View Categories</h1>
+    {% if site.categories %}
+        <ul>
+            <!-- //这里使用了 jekyll 语法，会被编译，所以加多个"\" -->
+            {%- assign categories = site.pages | map: 'categories' | uniq | compact -%}
+	    {%- assign category_s = site.pages | map: 'category' | uniq | compact -%}
+	    {%- assign categoties = categories | append: category_s | uniq | compact -%}
+            {%- for category in categories -%}
+                <li>
+                    <!-- <a href="/categories/{{ category | first }}/" title="view all posts">{{ category | first }} {{ category | last | size }}</a> -->
+                    <!-- <p>{{ category['name'] }}: [{{ category['count'] }}]</p> -->
+                    {{ category }}
+                </li>
+            {%- endfor -%}
+	</ul>
+    {% else %}
+        <p>No Categories</p>
+    {% endif %}
+
+       
+
+    <h1>View Tags</h1>
+    {% if site.tags %}
+        <p>Tags not nil</p>
+    {% else %}
+        <p>No tags</p>
+    {% endif %}
+
+    <ul>
+        {%- assign tags = site.pages | map: 'tags' | uniq | compact -%}
+	{%- assign tag_s = site.pages | map: 'tag' | uniq | compact -%}
+	{%- assign tags = tags | append: tag_s | uniq | compact -%}
+        {%- for tag in tags -%}
+            <li>
+                <p>{{ tag }}</p>
+            </li>
+        {%- endfor -%}
+    </ul>
+    
+    <hr>
+    <h1>More</h1>
+    
+    <p>categories.number: {{categories.size}}</p>
+    <p>tags.number: {{tags.size}}</p>
+
+    {% for tag in tags | compact %}
+    <h3>{{ tag['name'] }}: {{ tag | last | size }}</h3>
+    <ul>
+        {%- for page in tag.last -%}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {%- endfor -%}
+    </ul>
+    {% endfor %}
+    <hr>
+    
+</body>

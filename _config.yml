@@ -1,0 +1,32 @@
+remote_theme: pages-themes/leap-day@v0.2.0
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
+- jekyll-redirect-from
+
+baseurl: /MyDoc_A
+# url: https://liujiewentt.github.io
+permalink: none
+collections:
+  tags:
+    output: true
+    permalink: tags/:path/
+
+defaults:
+  -
+    values:
+      # author: "刘杰文"
+      # title: "MyDoc_A Library"
+      layout: leap_day_customized_v5.1
+      # allow_download_doc: true
+
+author: "刘杰文"
+allow_download_doc: true
+
+exclude:
+  - /**/*.origin.*
+  - Todo.md
+
+whitelist:
+  - jekyll-remote-theme
+  - jekyll-redirect-from
+  
