@@ -1,0 +1,178 @@
+<!-- inherited_from: leap_day -->
+<!-- inherited_from: leap_day_customized_v5 -->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>FetchRPlayer | Fetch Remote Player’s port to let them join my game. This is using SSH Port Forwarding. It’s like joining with IPv6 but not exposing server IP.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="FetchRPlayer" />
+<meta name="author" content="刘杰文" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Fetch Remote Player’s port to let them join my game. This is using SSH Port Forwarding. It’s like joining with IPv6 but not exposing server IP." />
+<meta property="og:description" content="Fetch Remote Player’s port to let them join my game. This is using SSH Port Forwarding. It’s like joining with IPv6 but not exposing server IP." />
+<link rel="canonical" href="https://liujiewentt.github.io/FetchRPlayer/docs/" />
+<meta property="og:url" content="https://liujiewentt.github.io/FetchRPlayer/docs/" />
+<meta property="og:site_name" content="FetchRPlayer" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="FetchRPlayer" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"刘杰文"},"description":"Fetch Remote Player’s port to let them join my game. This is using SSH Port Forwarding. It’s like joining with IPv6 but not exposing server IP.","headline":"FetchRPlayer","url":"https://liujiewentt.github.io/FetchRPlayer/docs/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/FetchRPlayer/assets/css/style.css?v=91f817a4850f19c56b0e2244ec56629d32fa0442">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/FetchRPlayer/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body><header>
+      <h1>FetchRPlayer</h1>
+      <p>Fetch Remote Player's port to let them join my game. This is using SSH Port  Forwarding. It's like joining with IPv6 but not exposing server IP.</p>
+      <p>Author: 刘杰文, Date: Unknown, Categories: , Tags: </p>
+    </header>
+
+    <div id="banner"><span id="logo" ></span><a href="https://liujiewentt.github.io/FetchRPlayer/docs/" class="button"><strong>Up</strong></a>
+      <a href="https://liujiewentt.github.io/FetchRPlayer" class="button"><strong>Home</strong></a>
+      <a href="https://liujiewentt.github.io/FetchRPlayer/pagemap.html" class="button">Page Map</a>
+
+      <a href="https://github.com/LiuJiewenTT/FetchRPlayer/tree/docs_only/docs/README.md" class="button fork"><strong>View On GitHub</strong></a>
+      
+    </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <!-- <p>page.author: </p>
+        <p>site.allow_download_doc: true</p>
+        <p>page.allow_download_doc: </p>
+        <p>allow_download_doc: false</p> --><h1 id="fetchrplayer">FetchRPlayer</h1>
+<p><strong style="color:red">Fetch Remote Player</strong>s’ <em>port</em>s to let them join “my” game. This is using SSH Port Forwarding feature. It’s like <strong>joining with IPv6</strong> but <strong>not giving server’s IP</strong>(not completely hidden). It’s abbreviation is just the “FRP” and it’s ok to regard it as a simple basic FRP alternative <strong>for really trusted friends</strong>. If you’re <strong>not</strong> able to trust some people, <strong>remember to apply security measures</strong>.</p>
+
+<blockquote>
+  <p>If there’s anything I said is wrong, please tell me and I will try to correct it.</p>
+</blockquote>
+
+<blockquote>
+  <p>For better reading experience, especially from mobile devices, please go to the html version of this <a href="https://liujiewentt.github.io/FetchRPlayer/docs/">link(online)</a> (<a href="https://github.com/LiuJiewenTT/FetchRPlayer/archive/refs/heads/docs_only.zip">download for offline</a>).</p>
+</blockquote>
+
+<h2 id="os-supported">OS Supported</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Windows (Current Branch)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Linux (In the future; not started yet.)</li>
+</ul>
+
+<h2 id="docs-in-language">Docs in Language</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />English</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><a href="/FetchRPlayer/docs/README_zh-cn.html">Chinese</a></li>
+</ul>
+
+<h2 id="notes">Notes</h2>
+
+<blockquote>
+  <p>If you don’t want to read these, <a href="#Using">click here to jump to the next section</a>.</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>This project <strong>is designed for Chinese initially</strong>. So the hints and instruction are written in Chinese. To display correctly, the products would ensure the code page to 65001(<strong>UTF-8</strong>).</p>
+  </li>
+  <li>
+    <p>Typically when <strong>playing Minecraft</strong>, the <em>HostPort</em> is for remote player who has IPv6 available and the <em>LocalPort</em> is the game’s LAN Port for LAN Players. In this case, port <code class="language-plaintext highlighter-rouge">25565</code> is often used as the LAN port, thus is <em>LocalPort</em> as well.</p>
+  </li>
+  <li>
+    <p>You may use SSH Local Port Forwarding and set <em>HostPort</em> to 22 to <strong>test</strong> if you’re ready to connect to the target device(remote player’s PC). The command is prepared in the script.</p>
+  </li>
+  <li>
+    <p>You <strong>might need to rerun</strong> the scripts if the network flops broke the connection.</p>
+  </li>
+  <li>
+    <p>This technique can hide the server’s IP from players literally, but it cannot hide from advanced users by using some methods and commands. So <strong>don’t lay too much expectation on the “Hidden IP” feature</strong>. <em>But it’s a good idea to forwarding <strong>random ports</strong> to players</em> by simply modify the scripts. <span style="color:red">That’s to say, every remote player can be given a port differently and randomly.</span> By doing so, your security will be improved in some sense.</p>
+  </li>
+  <li>
+    <p><strong>If you</strong>, the one who open a server, <strong>have no IPv6 address</strong>, you should consider reconfiguring your network, including adjusting routers’ settings, asking ISP for help and using IPv6 over IPv4 technologies. There are lots of methods, the most outstanding one is “Teredo”. For more information, you need to search by yourself.</p>
+  </li>
+  <li>
+    <p>Using this product means <em>remote players should have OpenSSH Server installed in the computers and giving your Pubkey(public key) to the remote players</em>. (Unless you use MSS:A strategy.)</p>
+  </li>
+  <li>
+    <p>For the strategies and security suggestions, view <a href="/FetchRPlayer/docs/Security_Suggestions.html">Security_Suggestions.md</a>.</p>
+
+    <blockquote>
+      <p>Strategies: DMSS, MSS:A, MSS:S, DAES, DAES-Extended, traps.</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h2 id="using">Using</h2>
+
+<ul>
+  <li>The following “Server side” and “Client side” only refer to the game but not this program.</li>
+  <li>The programs are <strong>only required on servers</strong>. Remote players don’t need to do anything except setting the server address to connect to in their applications, for example, games.</li>
+  <li><strong>GNU GPL</strong> license doesn’t mean you have to publish your codes unless you include the codes in your product which is for publish and redistribute. So you have unlimited freedom to use this.</li>
+</ul>
+
+<h3 id="server-side">Server side</h3>
+
+<p>Consider <code class="language-plaintext highlighter-rouge">example/example.bat</code> as a template, copy that file to the same folder as <code class="language-plaintext highlighter-rouge">start.bat</code> and name in format of <code class="language-plaintext highlighter-rouge">to_[name].bat</code>. For example, name as “to_ljw.bat” and “to_lcj.bat”.</p>
+
+<p>Then, you should edit the <code class="language-plaintext highlighter-rouge">host</code> variable. In most cases, the remote player has no IPv4 public address but IPv6 instead. If that is IPv6, quote it within <code class="language-plaintext highlighter-rouge">[]</code>.</p>
+
+<p>Currently the <code class="language-plaintext highlighter-rouge">run.bat</code> is not enabled. It lacks of the sentence, under line 14, to start: <code class="language-plaintext highlighter-rouge">@start "%%~fi"</code>. It’s not a problem cause <code class="language-plaintext highlighter-rouge">run.bat</code> is prepared for multi-players(remote).</p>
+
+<p><strong>To run the program, there are two ways for now</strong>:</p>
+
+<ol>
+  <li>The first one, you should set the value of <code class="language-plaintext highlighter-rouge">host</code> inside the script and start it.</li>
+  <li>The second, double-click <code class="language-plaintext highlighter-rouge">start.bat</code> and follow the instruction.</li>
+</ol>
+
+<h3 id="client-side">Client side</h3>
+
+<p>Add a server address: <code class="language-plaintext highlighter-rouge">[::1]:25566</code>, for example. The format is: <code class="language-plaintext highlighter-rouge">%HostLocal%:%HostPort%</code>.</p>
+
+<p>Enjoy! :smiley:</p>
+
+
+      </section>
+      <footer>
+        
+          <p>Project maintained by <a href="https://github.com/LiuJiewenTT">LiuJiewenTT</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a>,
+           customized by <a href="https://github.com/LiuJiewenTT">LiuJiewenTT</a> 
+           as <a href="https://github.com/LiuJiewenTT/FetchRPlayer/blob/docs_only/_layouts/leap_day_customized_v5.1.html">the layout</a>,
+           <a href="https://github.com/LiuJiewenTT/FetchRPlayer/blob/docs_only/_sass/jekyll-theme-leap-day.scss">the scss</a>.
+        </small></p>
+      </footer>
+    </div>
+    
+    <!-- Support for Mermaid Graphs
+            The tutorial link(Under this website): /docs/Jekyll/Jekyll下Markdown的填坑技巧
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script>
+        var config = {
+            startOnLoad:true,
+            theme: 'forest'
+        };
+        mermaid.initialize(config);
+        // mermaid.initialize({ startOnLoad: true });
+        mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    </script>
+
+  </body>
+</html>

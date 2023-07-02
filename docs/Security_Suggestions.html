@@ -1,0 +1,178 @@
+<!-- inherited_from: leap_day -->
+<!-- inherited_from: leap_day_customized_v5 -->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Security Suggestions | FetchRPlayer</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Security Suggestions" />
+<meta name="author" content="刘杰文" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Fetch Remote Player’s port to let them join my game. This is using SSH Port Forwarding. It’s like joining with IPv6 but not exposing server IP." />
+<meta property="og:description" content="Fetch Remote Player’s port to let them join my game. This is using SSH Port Forwarding. It’s like joining with IPv6 but not exposing server IP." />
+<link rel="canonical" href="https://liujiewentt.github.io/FetchRPlayer/docs/Security_Suggestions.html" />
+<meta property="og:url" content="https://liujiewentt.github.io/FetchRPlayer/docs/Security_Suggestions.html" />
+<meta property="og:site_name" content="FetchRPlayer" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Security Suggestions" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"刘杰文"},"description":"Fetch Remote Player’s port to let them join my game. This is using SSH Port Forwarding. It’s like joining with IPv6 but not exposing server IP.","headline":"Security Suggestions","url":"https://liujiewentt.github.io/FetchRPlayer/docs/Security_Suggestions.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/FetchRPlayer/assets/css/style.css?v=91f817a4850f19c56b0e2244ec56629d32fa0442">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/FetchRPlayer/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body><header>
+      <h1>Security Suggestions</h1>
+      <p>Fetch Remote Player's port to let them join my game. This is using SSH Port  Forwarding. It's like joining with IPv6 but not exposing server IP.</p>
+      <p>Author: 刘杰文, Date: Unknown, Categories: , Tags: </p>
+    </header>
+
+    <div id="banner"><span id="logo" ></span><a href="https://liujiewentt.github.io/FetchRPlayer/docs/" class="button"><strong>Up</strong></a>
+      <a href="https://liujiewentt.github.io/FetchRPlayer" class="button"><strong>Home</strong></a>
+      <a href="https://liujiewentt.github.io/FetchRPlayer/pagemap.html" class="button">Page Map</a>
+
+      <a href="https://github.com/LiuJiewenTT/FetchRPlayer/tree/docs_only/docs/Security_Suggestions.md" class="button fork"><strong>View On GitHub</strong></a>
+      
+    </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <!-- <p>page.author: </p>
+        <p>site.allow_download_doc: true</p>
+        <p>page.allow_download_doc: </p>
+        <p>allow_download_doc: false</p> --><h1 id="security-suggestions">Security Suggestions</h1>
+
+<ol>
+  <li>
+    <p>You should give servers’ pubkeys to remote players and ask them to authorize the keys if you use key authentication. To be honest, <strong>you really should use key authentication</strong> unless the remote player is willing to give you an account’s password and you’re willing to enter that every time.</p>
+  </li>
+  <li>
+    <p>Unless you use Local Port Forwarding, as is the <strong>MSS:A</strong> mentioned below, who can join is controlled by you. <strong>You start/enable whose script in local, then who will be able to join.</strong> In facts, in the case of MSS:A, you can determine as well, but that is in another method to control.</p>
+  </li>
+  <li>
+    <p>To protect your game from being joined and visited freely without management/authentication/authorization, don’t open the game port in firewall. That’s to say, the port for direct LAN game should never be exposed to public.</p>
+  </li>
+  <li>
+    <blockquote>
+      <p><em>But it’s a good idea to forwarding <strong>random/different ports</strong> to players</em> by simply modify the scripts. <span style="color:red">That’s to say, every remote player can be given a port differently and randomly.</span> By doing so, your security will be improved in some sense.</p>
+    </blockquote>
+
+    <p>To realize this, you should have some scripts or programs that can complete this automation work.</p>
+  </li>
+  <li>
+    <p><strong style="background:lightgray; color:blue">If you’re encountering <span style="color:red">DDoS attacks</span>, read the 4th above first and consider the solutions below.</strong></p>
+
+    <ol>
+      <li><strong>Player Management(Cleaning): You should make the system to change to a new IPv6 address instead of going down/offline. And you should protect your ports. To find out the spy, I advise you to apply “binary search” by dividing players to different groups and giving different ports on a newly configured IPv6 address. If all ports are scanned and attacked, don’t give IPv6 address to more than one group in the same period/stage. Besides, this has inspired me an idea about “distributed”: “Distributed Mid-Server Strategy”(DMSS, mentioned in the followings).</strong></li>
+      <li>Connection Optimization Option: Use IPv6 to stop attacks from IPv4 Network. Most people in China should have the IPv6 access from home networks and mobile hotspots, if not, consider “Teredo” servers as mentioned in the 6th point. I know that it’s not easy to maintain a IPv4 server, but you may <strong>try sharing your teredo server with someone like you and form a small group: you join together. If the owner got attacked and had have to spend lots of money on protection, it’s time to call police.</strong> In this strategy, a teredo server is always optional and can be given up and most players should not be affected at all. 
+(This is about traditional IPv4-based attacks. But not all attacks based on IPs (like ICMP(not ICMPv6)) and there are attacks regarding to IPv6. So this is kind of redundancy. As time goes, this would have smaller and smaller effects as there will be more and more IPv6 attacks.)</li>
+      <li>Most OS does not enable the feature of temporary IPv6 address, so it will work for a long time that banning a IPv6 address. But don’t lay too much expectation on this point.</li>
+      <li><strong>About firewall</strong>: if you can, void <strong>external network</strong> accessing common ports, including <del style="color:orange"><code class="language-plaintext highlighter-rouge">&lt;del&gt;</code></del>22,<del style="color:orange"><code class="language-plaintext highlighter-rouge">&lt;/del&gt;</code></del> 23, 80, 443, etc., and only local devices are allowed. You may leave some other port for ssh. Change or close some ports can usually decrease the affect of some types of DDoS attacks working on <strong>Application Layer</strong> of OSI Model. But it’s the best that you have some firewall directed against DDoS.</li>
+      <li><strong>Distributed Mid-Server Strategy (DMSS)</strong>: You should apply <strong>MSS:A</strong> or <strong>MSS:S</strong> (mentioned below). Never tell all players all the ports but tell by group. This is a management preference and is good for keep a spy-less network. If one mid-server is being attacked and cannot work properly, the players using other mid-servers would not be affected. And this, when you choose MSS:A, is somewhat a feeling of using SakuraFrp, although they’re different.</li>
+      <li>Use CDN. This should be better than the DMSS.</li>
+    </ol>
+  </li>
+  <li>
+    <blockquote>
+      <p>Using this product means <strong>remote players should have OpenSSH Server installed</strong> in the computers and <em>giving your Pubkey(public key) to the remote players</em>. (Unless you use MSS:A strategy.)</p>
+    </blockquote>
+
+    <p><strong>To obtain trust</strong>, you may do these:</p>
+
+    <ol>
+      <li><strong>Publish your codes to run</strong>. You can refer to this project if you did no change on them. But <strong>do keep players’ customized scripts private</strong> and give no information to anyone unless the corresponding player made <strong>a request to examine</strong> that of his/hers.</li>
+      <li><strong>Divided Account Environment Strategy</strong>: Carefully configure read/write/execute(rwx) accesses and give this product a single account with the files holding rights of 600, or even 400. The account’s keys, including private key and public key, should not be accessible for other users.</li>
+      <li>If they still not trust you, here is <strong>an advanced solution (Mid-Server Strategy: Acceptor)</strong>:
+        <ol>
+          <li>Prepare a server as an agent or a swapper and we call it as “mid-server”. If you do this, you can regard the mid-server as the one to be published and to be protected from attacks and never give your server’s address.</li>
+          <li><strong>Mid-server should have SSH Server and remote players should have SSH Client</strong>. In this solution, they should give pubkeys to mid-servers rather than be given the mid-servers’ pubkeys.</li>
+          <li>You redirect logins to a mid-server, they login to the mid-server by themselves using scripts or whatever. That is to say, all you need to do is to log into a mid-server with keys. You can process ssh auth log to count keys’ IPs in a day to check out the abnormal status. You can ban a player by simply removing his pubkey from <code class="language-plaintext highlighter-rouge">authorized_keys</code> or banning his IPv6 address for some period. You come with the port and he should come to the port prepared by you.</li>
+          <li>In this strategy, you can have <strong>many mid-server</strong> if you are able to do this and <strong>the server address is hid completely</strong> as long as you make the server to log into the mid-server with IPv4 and <del>LAN address</del>(at least not public IPv4 address). You might disable password authentication of ssh in the meanwhile.</li>
+          <li>Don’t authorize mid-server’s pubkey on your server to protect yourself. You don’t need to give any key to anyone in this solution.</li>
+          <li><strong>DAES-Extended</strong>(<span style="color:grey">Optional</span>): mid-servers can be applied with <strong>DAES (Divided Account Environment Strategy)</strong> as well. Here are some additional measures:
+            <ol>
+              <li>Additional measure, 1st: prepare an players’ exclusive account for them to log in. It’s suggested not to give out password and disable password authentication of ssh.</li>
+              <li>Additional measure, 2nd-v1: set the <code class="language-plaintext highlighter-rouge">authorized_keys</code> to <code class="language-plaintext highlighter-rouge">400</code>(requires account to have no rights of sudoers/administrators). To modify the content, you should use sudoers/administrators identities doing “<code class="language-plaintext highlighter-rouge">chmod</code>, etc.” with external network disconnected.</li>
+              <li>Additional measure, 2nd-v2(<span style="color:red">Recommended</span>): set the <code class="language-plaintext highlighter-rouge">authorized_keys</code> to another user owned, e.g.: root. The command to configure this can be: <code class="language-plaintext highlighter-rouge">chown root:root authorized_keys</code>. Give read access to “other”: <code class="language-plaintext highlighter-rouge">chmod o+r authorized_keys</code> (It seems to have ‘r’ by default in Linux).</li>
+              <li>By doing the additional measures above, <strong>no spy can add new spies to the authorized list</strong>. (Remember to restart the <code class="language-plaintext highlighter-rouge">sshd</code> service.)</li>
+            </ol>
+          </li>
+          <li>(<span style="color:grey">Optional</span>): The logged-in users can see mid-servers’ system information, including MAC addresses, IP addresses and process information. If you can, this problem can be solved by applying <strong>DAES</strong> and forbid/trap <code class="language-plaintext highlighter-rouge">ifconfig</code>, <code class="language-plaintext highlighter-rouge">netstat</code>, <code class="language-plaintext highlighter-rouge">ps</code>, <code class="language-plaintext highlighter-rouge">top</code>, etc.. But it’s <strong>complex</strong>, I don’t want to talk about it further.</li>
+          <li>This solution has a problem: what if remote player don’t use port for him but that for some other one? <strong>So</strong> if you use this solution, don’t keep same ports opened for too long and don’t open too many ports for games <strong>excepts traps. (Record source IP to the traps and ban them for a long time.)</strong></li>
+        </ol>
+      </li>
+      <li>For those <strong>who had leaked</strong> something and need to use a new machine, here is a solution (<strong>MMS:S</strong>):
+        <ol>
+          <li>
+            <p>Prepare a “mid-server”, then apply this product on the mid-server instead. You may apply <strong>MMS:A (Mid-Server Strategy: Acceptor)</strong>. If you don’t let others to log in to the mid-server but keep the Remote Port Forwarding all along the way with no matter if the rests of <strong>MMS:A</strong> got applied or not, it’s called <strong>MMS:S (Mid-Server Strategy: Sender/Simple)</strong>. The full version of MSS:S is based on original product and should have DAES and traps mentioned in MSS:A as they are highly recommended measures.</p>
+          </li>
+          <li>
+            <p>Use Remote Port Forwarding Feature of SSH to publish your game port to the mid-server.</p>
+          </li>
+          <li>
+            <blockquote>
+              <p>You should give mid-servers’ pubkeys to remote players and ask them to authorize the keys.</p>
+            </blockquote>
+          </li>
+          <li>
+            <p>You should not authorize mid-servers’ pubkeys on your servers or any other devices.</p>
+          </li>
+          <li>Remote players will not be able to log into mid-servers.</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Additional Security Suggestions concerning IPv6:</p>
+
+    <ol>
+      <li>Don’t use EUI-64 to generate your IPv6 address! If not sure, never expose it! The IPv6 address derived from it can be inferred about your MAC address.</li>
+    </ol>
+  </li>
+</ol>
+
+
+      </section>
+      <footer>
+        
+          <p>Project maintained by <a href="https://github.com/LiuJiewenTT">LiuJiewenTT</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a>,
+           customized by <a href="https://github.com/LiuJiewenTT">LiuJiewenTT</a> 
+           as <a href="https://github.com/LiuJiewenTT/FetchRPlayer/blob/docs_only/_layouts/leap_day_customized_v5.1.html">the layout</a>,
+           <a href="https://github.com/LiuJiewenTT/FetchRPlayer/blob/docs_only/_sass/jekyll-theme-leap-day.scss">the scss</a>.
+        </small></p>
+      </footer>
+    </div>
+    
+    <!-- Support for Mermaid Graphs
+            The tutorial link(Under this website): /docs/Jekyll/Jekyll下Markdown的填坑技巧
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script>
+        var config = {
+            startOnLoad:true,
+            theme: 'forest'
+        };
+        mermaid.initialize(config);
+        // mermaid.initialize({ startOnLoad: true });
+        mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    </script>
+
+  </body>
+</html>
