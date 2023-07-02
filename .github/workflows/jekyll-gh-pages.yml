@@ -33,13 +33,26 @@ jobs:
         uses: actions/checkout@v3
         with: 
           ref: 'docs_generation'
+          path: 'docs_generation'
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./docs_generation
           destination: ./_site
+      - name: Put into docs_only branch
+        uses: actions/checkout@v3
+          with: 
+            ref: 'docs_only'
+            path: 'docs_only'
+        run: |
+          cp -r ./_site/* ./docs_only/
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
