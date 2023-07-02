@@ -48,6 +48,7 @@ jobs:
           path: 'docs_only'
       - name: Put into docs_only branch
         run: |
+          whoami
           pwd
           ls -l .
           echo -
