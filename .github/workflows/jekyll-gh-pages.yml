@@ -54,6 +54,8 @@ jobs:
           echo -
           ls -l ..
           cp -r ./_site/* ./docs_only/
+          ls -l ./docs_only
+          cd ./docs_only
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
