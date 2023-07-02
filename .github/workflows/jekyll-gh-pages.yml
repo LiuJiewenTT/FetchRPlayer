@@ -43,9 +43,9 @@ jobs:
           destination: ./_site
       - name: Put into docs_only branch
         uses: actions/checkout@v3
-          with: 
-            ref: 'docs_only'
-            path: 'docs_only'
+        with: 
+          ref: 'docs_only'
+          path: 'docs_only'
         run: |
           cp -r ./_site/* ./docs_only/
           git config user.name github-actions
