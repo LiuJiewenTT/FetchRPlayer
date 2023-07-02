@@ -41,11 +41,12 @@ jobs:
         with:
           source: ./docs_generation
           destination: ./_site
-      - name: Put into docs_only branch
+      - name: Checkout docs_only branch
         uses: actions/checkout@v3
         with: 
           ref: 'docs_only'
           path: 'docs_only'
+      - name: Put into docs_only branch
         run: |
           cp -r ./_site/* ./docs_only/
           git config user.name github-actions
