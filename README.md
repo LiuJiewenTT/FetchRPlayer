@@ -41,7 +41,7 @@
 
 - The following "Server side" and "Client side" only refer to the game but not this program.
 - The programs are **only required on servers**. Remote players don't need to do anything except setting the server address to connect to in their applications, for example, games.
-- **GNU GPL** license doesn't mean you have to publish your codes unless you include the codes in your product which is for publish and redistribute. So you have unlimited freedom to use this.
+- **GNU GPL** license doesn't mean you have to publish your codes unless you include the codes in your product which is for publish and redistribute. So you have limitless freedom to use this.
 
 ### Server side
 
